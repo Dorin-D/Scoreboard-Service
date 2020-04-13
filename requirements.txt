@@ -1,0 +1,10 @@
+-- quick requirements --
+
+1. An entry consists of an username and a highscore
+	implementation:
+	a) Linked list Entry consisting of username, higshcore
+2. Entries should be sortable (by score)
+	assumption:
+	a) entries are stored unsorted, based on the added time
+3. Entries can be added by user
+4. Do not stay up all night coding this
