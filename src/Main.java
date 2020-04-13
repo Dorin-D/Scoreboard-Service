@@ -14,12 +14,12 @@ public class Main {
 			uniqueSC.addEntry(splitter[0], Integer.parseInt(splitter[1]));
 		}
 		br.close();
-		quickSort(uniqueSC.getHighscores(), 0, uniqueSC.getHighscores().size()-1);
+		quickSort(uniqueSC, 0, uniqueSC.size()-1, 1);
 		uniqueSC.printEntries();
 	}
 	
-	
-	public static void quickSort(ArrayList<Entry> highscores, int low, int high) {
+	//ascending argument 1 sorts low to high, 0 sorts high to low
+	public static void quickSort(ArrayList<Entry> highscores, int low, int high, int ascending) {
 		if (highscores.size() == 0) {
 			return;
 		}
@@ -33,11 +33,11 @@ public class Main {
 		int j = high;
 		
 		while (i <= j) {
-			while (highscores.get(i).compareTo(pivot) < 0) {
+			while (highscores.get(i).compareTo(pivot, ascending) < 0) {
 				i++;
 			}
 			
-			while(highscores.get(j).compareTo(pivot) > 0) {
+			while(highscores.get(j).compareTo(pivot, ascending) > 0) {
 				j--;
 			}
 			if (i <= j) {
@@ -49,20 +49,12 @@ public class Main {
 			}
 		}
 		if (low < j) {
-			quickSort(highscores, low, j);
+			quickSort(highscores, low, j, ascending);
 		}
 		if(high > i) {
-			quickSort(highscores, i, high);
+			quickSort(highscores, i, high, ascending);
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
 /* writing to file, if necessary
