@@ -28,3 +28,4 @@ public class Scoreboard{
 		return this.highscores;
 	}
 }
+

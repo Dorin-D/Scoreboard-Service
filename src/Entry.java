@@ -26,4 +26,11 @@ public class Entry {
 	public String toString() {
 		return(this.username + "," + this.highscore);
 	}
+	public int compareTo(Entry secondEntry) {          
+		//if current highscore is lower then return -1
+		//if equal return 0, otherwise return 1
+	    return (this.getHighscore() < secondEntry.getHighscore() ? -1 : 
+	            (this.getHighscore() == secondEntry.getHighscore() ? 0 : 1));     
+	  }       
+	
 }
