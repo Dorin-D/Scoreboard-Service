@@ -22,4 +22,8 @@ public class Entry {
 	public void setHighscore(int highscore) {
 		this.highscore = highscore;
 	}
+	@Override
+	public String toString() {
+		return(this.username + "," + this.highscore);
+	}
 }
