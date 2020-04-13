@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {	
 	public static void main(String[] args) throws Exception{
@@ -14,9 +15,27 @@ public class Main {
 			uniqueSC.addEntry(splitter[0], Integer.parseInt(splitter[1]));
 		}
 		br.close();
+		/*
+		takes user input for 1 highscore and adds it to the 
+		Scoreboard object and to Highscores.txt
+		*/
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Insert username: ");
+		String username = sc.nextLine();
+		System.out.println("Insert highscore: ");
+		int highscore = sc.nextInt();
+		FileWriter fw = new FileWriter(highscores, true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write("\n" + username + " " + highscore);
+		uniqueSC.addEntry(username, highscore);
+		bw.close();
+		fw.close();
+		sc.close();
 		quickSort(uniqueSC, 0, uniqueSC.size()-1, 1);
 		uniqueSC.printEntries();
 	}
+	
+	
 	/*
 	how to use:
 	quickSort(Scoreboard object, 0, object.length - 1, ascending)
@@ -60,12 +79,3 @@ public class Main {
 		}
 	}
 }
-
-/* writing to file, if necessary
-FileWriter fw = new FileWriter(highscores, true);
-BufferedWriter bw = new BufferedWriter(fw);
-bw.write("\nAlpha 50");
-
-bw.close();
-fw.close();
-*/ 
