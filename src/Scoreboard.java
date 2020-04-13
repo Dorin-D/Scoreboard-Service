@@ -2,8 +2,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Scoreboard extends ArrayList<Entry>{
-	//private ArrayList<Entry> highscores = new ArrayList<Entry>();
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Scoreboard() {
 		System.out.println("Succesfully created a new scoreboard.");
 	}

@@ -17,8 +17,12 @@ public class Main {
 		quickSort(uniqueSC, 0, uniqueSC.size()-1, 1);
 		uniqueSC.printEntries();
 	}
-	
-	//ascending argument 1 sorts low to high, 0 sorts high to low
+	/*
+	how to use:
+	quickSort(Scoreboard object, 0, object.length - 1, ascending)
+	where:
+		ascending 1 sorts low to high, 0 sorts high to low
+	*/
 	public static void quickSort(ArrayList<Entry> highscores, int low, int high, int ascending) {
 		if (highscores.size() == 0) {
 			return;
